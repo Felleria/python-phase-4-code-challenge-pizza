@@ -13,8 +13,10 @@ app.config["SQLALCHEMY_DATABASE_URI"] = DATABASE
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 app.json.compact = False
 
+# create a Migrate object to manage schema modifications
 migrate = Migrate(app, db)
 
+# initialize the Flask application to use the database
 db.init_app(app)
 
 api = Api(app)
